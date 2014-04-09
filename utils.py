@@ -47,7 +47,7 @@ def render_right_aligned_line(line, viewport_width):
             current_line = [word]
     if current_line: 
         lines.append(current_line)
-    return [(([' '] * (max_length - __len(' '.join(line)))) + line) for line in lines]
+    return [([''.join([' '] * (max_length - len(' '.join(line))))] + line) for line in lines]
             
 
 def render_left_aligned_lines(lines, terminal_size, margins):
